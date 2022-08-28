@@ -9,14 +9,29 @@ import UIKit
 
 class ViewController: UIViewController {
 
+	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view.
+		
+		activityIndicator.hidesWhenStopped = true
+		activityIndicator.stopAnimating()
+		
 	}
 
 	@IBAction func getUserbyIdAction(_ sender: Any) {
 		
-		NetworkingProvider.shared.getUserById(id: 6498)
+		activityIndicator.startAnimating()
+		
+		NetworkingProvider.shared.getUserById(id: 6498) { (user) in
+			
+			self.activityIndicator.stopAnimating()
+			
+		} failure: { error in
+			
+			self.activityIndicator.stopAnimating()
+		}
+
 	}
 	
 }
