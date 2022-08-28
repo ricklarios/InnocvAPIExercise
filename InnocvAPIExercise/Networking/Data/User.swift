@@ -16,7 +16,7 @@ import Foundation
 struct User: Decodable {
 	
 	let name: String?
-	let birthdate: Date?
+	let birthdate: String?
 	let id: Int?
 	
 }
