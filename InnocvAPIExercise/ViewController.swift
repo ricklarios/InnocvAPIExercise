@@ -8,7 +8,12 @@
 import UIKit
 
 class ViewController: UIViewController {
+	
+	// MARK: - Dependencies
+	
+	private var domainViewModel: [User] = []
 
+	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 	
 	override func viewDidLoad() {
@@ -16,6 +21,9 @@ class ViewController: UIViewController {
 		
 		activityIndicator.hidesWhenStopped = true
 		activityIndicator.stopAnimating()
+		
+		tableView.dataSource = self
+		tableView.isHidden = true
 		
 	}
 
@@ -39,10 +47,15 @@ class ViewController: UIViewController {
 		
 		activityIndicator.startAnimating()
 		
+		
 		NetworkingProvider.shared.getUsers() { (users) in
 			
 			self.activityIndicator.stopAnimating()
-			print(users)
+			self.domainViewModel = users
+			self.tableView.reloadData()
+			self.tableView.isHidden = false
+			
+			print(self.domainViewModel)
 			
 		} failure: { (error) in
 			
@@ -53,5 +66,27 @@ class ViewController: UIViewController {
 		
 	}
 	
+}
+
+extension ViewController: UITableViewDataSource {
+	
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return domainViewModel.count
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		
+		var cell = tableView.dequeueReusableCell(withIdentifier: "myCell")
+		if cell == nil {
+			cell = UITableViewCell(style: .default, reuseIdentifier: "myCell")
+			
+			cell?.accessoryType = .disclosureIndicator
+		}
+		
+		
+		cell!.textLabel?.text = domainViewModel[indexPath.row].name
+		
+		return cell!
+	}
 }
 

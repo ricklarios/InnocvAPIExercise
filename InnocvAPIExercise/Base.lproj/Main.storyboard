@@ -36,25 +36,34 @@
                                     <action selector="getAllUsersAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5hE-Le-iVf"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="b02-oC-U40">
+                                <rect key="frame" x="20" y="166" width="374" height="676"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="b02-oC-U40" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0oV-5Y-KRh"/>
                             <constraint firstItem="bhf-pp-eRS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4Rf-fM-q68"/>
+                            <constraint firstItem="b02-oC-U40" firstAttribute="top" secondItem="apx-M4-xLH" secondAttribute="bottom" constant="20" id="CyH-B0-OBm"/>
                             <constraint firstItem="apx-M4-xLH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eYs-nJ-Wfb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bhf-pp-eRS" secondAttribute="trailing" constant="20" id="gpm-te-0gc"/>
                             <constraint firstItem="bhf-pp-eRS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="hPp-H8-NFP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="apx-M4-xLH" secondAttribute="trailing" constant="20" id="jOP-Kh-NZS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b02-oC-U40" secondAttribute="trailing" constant="20" id="moh-Wa-fwU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="b02-oC-U40" secondAttribute="bottom" constant="20" id="rGO-oE-dHu"/>
                             <constraint firstItem="apx-M4-xLH" firstAttribute="top" secondItem="bhf-pp-eRS" secondAttribute="bottom" constant="20" id="zgJ-gE-BFM"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="EKw-iK-oBR" id="VXl-YJ-Q9O"/>
+                        <outlet property="tableView" destination="b02-oC-U40" id="y8y-gS-Y74"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="103" y="114"/>
+            <point key="canvasLocation" x="102.89855072463769" y="113.83928571428571"/>
         </scene>
     </scenes>
     <resources>
