@@ -34,5 +34,24 @@ class ViewController: UIViewController {
 
 	}
 	
+	
+	@IBAction func getAllUsersAction(_ sender: Any) {
+		
+		activityIndicator.startAnimating()
+		
+		NetworkingProvider.shared.getUsers() { (users) in
+			
+			self.activityIndicator.stopAnimating()
+			print(users)
+			
+		} failure: { (error) in
+			
+			self.activityIndicator.stopAnimating()
+			print(error.debugDescription)
+			
+		}
+		
+	}
+	
 }
 
