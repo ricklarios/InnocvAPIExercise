@@ -27,19 +27,22 @@ class ViewController: UIViewController {
 		
 	}
 
-	@IBAction func getUserbyIdAction(_ sender: Any) {
-		
-		activityIndicator.startAnimating()
-		
-		NetworkingProvider.shared.getUserById(id: 6498) { (user) in
-			
-			self.activityIndicator.stopAnimating()
-			
-		} failure: { error in
-			
-			self.activityIndicator.stopAnimating()
-		}
-
+//	@IBAction func getUserbyIdAction(_ sender: Any) {
+//
+//		activityIndicator.startAnimating()
+//
+//		NetworkingProvider.shared.getUserById(id: 6498) { (user) in
+//
+//			self.activityIndicator.stopAnimating()
+//
+//		} failure: { error in
+//
+//			self.activityIndicator.stopAnimating()
+//		}
+//
+//	}
+	
+	@IBAction func newUserAction(_ sender: Any) {
 	}
 	
 	
