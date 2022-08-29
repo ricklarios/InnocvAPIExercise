@@ -13,13 +13,16 @@ class AddUserViewController: UIViewController {
 	
 	@IBOutlet weak var nameTextField: UITextField!
 	@IBOutlet weak var dateSelector: UIDatePicker!
-	@IBOutlet weak var submitButton: UIButton!
-	
+	@IBOutlet weak var submitButton: UIButton!	
+	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
 		
 		nameTextField?.delegate = self
+		
+		activityIndicator.hidesWhenStopped = true
+		activityIndicator.stopAnimating()
     }
 
 
@@ -30,6 +33,8 @@ class AddUserViewController: UIViewController {
 	}
 	
 	@IBAction func submitAction(_ sender: Any) {
+		
+		activityIndicator.startAnimating()
 		
 		let rawDate = dateSelector.date
 		print(rawDate)
@@ -43,6 +48,7 @@ class AddUserViewController: UIViewController {
 			
 			NetworkingProvider.shared.addUser(user: newUser) { response in
 				
+				self.activityIndicator.stopAnimating()
 				print("OK!!!!")
 				let alertController = UIAlertController(title: "ok", message: "User created successfully", preferredStyle: .alert)
 				alertController.addAction(UIAlertAction(title: "OK", style: .default) { _ in

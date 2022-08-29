@@ -50,7 +50,7 @@ class ViewController: UIViewController {
 		
 		func startNavigation() {
 			self.present(AddUserViewController(), animated: true)
-			self.modalPresentationStyle = .fullScreen
+			self.modalPresentationStyle = .none
 			}
 
 		startNavigation()
