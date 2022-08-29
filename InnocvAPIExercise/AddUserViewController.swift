@@ -14,12 +14,11 @@ class AddUserViewController: UIViewController {
 	@IBOutlet weak var nameTextField: UITextField!
 	@IBOutlet weak var dateSelector: UIDatePicker!
 	@IBOutlet weak var submitButton: UIButton!
-	@IBOutlet weak var statusLabel: UILabel!
+	
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
 		
-		statusLabel.text = ""
 		nameTextField?.delegate = self
     }
 
@@ -42,14 +41,22 @@ class AddUserViewController: UIViewController {
 			let newUser = NewUser(name: inputName,
 								  birthdate: inputDate, id: 0)
 			
-			NetworkingProvider.shared.addUser(user: newUser) { (response) in
+			NetworkingProvider.shared.addUser(user: newUser) { response in
 				
-				self.statusLabel.text = "User created successfully"
+				print("OK!!!!")
+				let alertController = UIAlertController(title: "ok", message: "User created successfully", preferredStyle: .alert)
+				alertController.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+					self.dismiss(animated: true)
+				})
+				alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+				
+				self.present(alertController, animated: true, completion: nil)
+				
 
-			} failure: { error in
-				self.statusLabel.text = error.debugDescription
-				print(error!)
-			}
+				} failure: { error in
+				
+					print(error!)
+				}
 			
 		}
 		

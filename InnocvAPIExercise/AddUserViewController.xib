@@ -12,7 +12,6 @@
             <connections>
                 <outlet property="dateSelector" destination="3YX-Rn-Ic3" id="kFM-Fr-8nT"/>
                 <outlet property="nameTextField" destination="IbV-2K-Lch" id="yrC-0v-YGC"/>
-                <outlet property="statusLabel" destination="Gf2-6u-BHy" id="BFi-eF-e3K"/>
                 <outlet property="submitButton" destination="Zrp-wt-yuq" id="lSN-VU-P4a"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -58,23 +57,13 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </stackView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gf2-6u-BHy">
-                    <rect key="frame" x="20" y="438" width="374" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="7yy-5G-O3u" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="5Ec-JN-B3X"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Gf2-6u-BHy" secondAttribute="trailing" constant="20" id="IDI-mm-OAc"/>
-                <constraint firstItem="Gf2-6u-BHy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="IV6-4m-H7Q"/>
                 <constraint firstItem="7yy-5G-O3u" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="Jh5-J9-jua"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7yy-5G-O3u" secondAttribute="trailing" constant="20" id="PbX-q7-aAH"/>
-                <constraint firstItem="Gf2-6u-BHy" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bKh-4i-uLU"/>
-                <constraint firstItem="Gf2-6u-BHy" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="gaI-UP-kPh"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="127.90178571428571"/>
         </view>

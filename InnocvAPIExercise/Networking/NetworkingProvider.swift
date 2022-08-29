@@ -53,8 +53,12 @@ final class NetworkingProvider {
 		
 		AF.request(url, method: .post, parameters: user, encoder: JSONParameterEncoder.default).validate(statusCode: kStatusCode).response { response in
 			
-			print(user)
-			print(response)
+			if let error = response.error {
+							failure(error)
+						} else {
+							success("ok")
+						}
+						
 		}
 	}
 }

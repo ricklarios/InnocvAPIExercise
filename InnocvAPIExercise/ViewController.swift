@@ -53,7 +53,6 @@ class ViewController: UIViewController {
 			self.modalPresentationStyle = .fullScreen
 			}
 
-		
 		startNavigation()
 		
 		
