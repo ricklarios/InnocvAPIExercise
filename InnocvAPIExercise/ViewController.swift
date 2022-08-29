@@ -19,6 +19,8 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		title = "API Exercise"
+		
 		activityIndicator.hidesWhenStopped = true
 		activityIndicator.stopAnimating()
 		
@@ -42,19 +44,18 @@ class ViewController: UIViewController {
 //
 //	}
 	
+	
 	@IBAction func newUserAction(_ sender: Any) {
 		
-		let newUser = NewUser(name: "Ricardo",
-							  birthdate: "2022-08-28T10:00:00", id: 0)
 		
-		NetworkingProvider.shared.addUser(user: newUser) { (response) in
-			
-			
-			
-		} failure: { error in
-			
-			print(error!)
-		}
+		func startNavigation() {
+			self.present(AddUserViewController(), animated: true)
+			self.modalPresentationStyle = .fullScreen
+			}
+
+		
+		startNavigation()
+		
 		
 	}
 	

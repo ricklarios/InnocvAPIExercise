@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="POc-IP-AS0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -8,6 +8,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="xlX-YG-JdB">
+            <objects>
+                <navigationController id="POc-IP-AS0" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="O1Z-xV-crq">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="DO4-5v-5XF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3rd-7u-ahf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1553" y="101"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -21,11 +37,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="b02-oC-U40">
-                                <rect key="frame" x="20" y="157" width="374" height="685"/>
+                                <rect key="frame" x="20" y="201" width="374" height="641"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bD9-uc-mKj">
-                                <rect key="frame" x="345" y="44" width="49" height="62"/>
+                                <rect key="frame" x="345" y="88" width="49" height="62"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="+">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
@@ -35,7 +51,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apx-M4-xLH">
-                                <rect key="frame" x="20" y="106" width="374" height="31"/>
+                                <rect key="frame" x="20" y="150" width="374" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Get All Users"/>
                                 <connections>
@@ -49,6 +65,7 @@
                             <constraint firstItem="b02-oC-U40" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0oV-5Y-KRh"/>
                             <constraint firstItem="b02-oC-U40" firstAttribute="top" secondItem="apx-M4-xLH" secondAttribute="bottom" constant="20" id="CyH-B0-OBm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bD9-uc-mKj" secondAttribute="trailing" constant="20" id="QdY-G6-ztP"/>
+                            <constraint firstItem="bD9-uc-mKj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="Wcq-aH-sQx"/>
                             <constraint firstItem="apx-M4-xLH" firstAttribute="top" secondItem="bD9-uc-mKj" secondAttribute="bottom" id="cjp-c5-j0w"/>
                             <constraint firstItem="apx-M4-xLH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eYs-nJ-Wfb"/>
                             <constraint firstItem="bD9-uc-mKj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="h2y-T6-Ld1"/>
@@ -57,6 +74,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="b02-oC-U40" secondAttribute="bottom" constant="20" id="rGO-oE-dHu"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="pVW-Kg-YhK"/>
                     <connections>
                         <outlet property="activityIndicator" destination="EKw-iK-oBR" id="VXl-YJ-Q9O"/>
                         <outlet property="tableView" destination="b02-oC-U40" id="y8y-gS-Y74"/>
@@ -64,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="102.89855072463769" y="113.83928571428571"/>
+            <point key="canvasLocation" x="-696" y="110"/>
         </scene>
     </scenes>
     <resources>
