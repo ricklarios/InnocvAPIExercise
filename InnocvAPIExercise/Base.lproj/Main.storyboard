@@ -16,44 +16,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhf-pp-eRS">
-                                <rect key="frame" x="20" y="64" width="374" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Get User By Id: 6498"/>
-                                <connections>
-                                    <action selector="getUserbyIdAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m3s-nn-ddH"/>
-                                </connections>
-                            </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="EKw-iK-oBR">
                                 <rect key="frame" x="197" y="438" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="b02-oC-U40">
+                                <rect key="frame" x="20" y="115" width="374" height="727"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apx-M4-xLH">
-                                <rect key="frame" x="20" y="115" width="374" height="31"/>
+                                <rect key="frame" x="20" y="64" width="374" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Get All Users"/>
                                 <connections>
                                     <action selector="getAllUsersAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5hE-Le-iVf"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="b02-oC-U40">
-                                <rect key="frame" x="20" y="166" width="374" height="676"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="b02-oC-U40" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0oV-5Y-KRh"/>
-                            <constraint firstItem="bhf-pp-eRS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4Rf-fM-q68"/>
                             <constraint firstItem="b02-oC-U40" firstAttribute="top" secondItem="apx-M4-xLH" secondAttribute="bottom" constant="20" id="CyH-B0-OBm"/>
+                            <constraint firstItem="apx-M4-xLH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="SUz-fQ-eWc"/>
                             <constraint firstItem="apx-M4-xLH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eYs-nJ-Wfb"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bhf-pp-eRS" secondAttribute="trailing" constant="20" id="gpm-te-0gc"/>
-                            <constraint firstItem="bhf-pp-eRS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="hPp-H8-NFP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="apx-M4-xLH" secondAttribute="trailing" constant="20" id="jOP-Kh-NZS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b02-oC-U40" secondAttribute="trailing" constant="20" id="moh-Wa-fwU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="b02-oC-U40" secondAttribute="bottom" constant="20" id="rGO-oE-dHu"/>
-                            <constraint firstItem="apx-M4-xLH" firstAttribute="top" secondItem="bhf-pp-eRS" secondAttribute="bottom" constant="20" id="zgJ-gE-BFM"/>
                         </constraints>
                     </view>
                     <connections>
