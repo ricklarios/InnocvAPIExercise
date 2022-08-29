@@ -17,6 +17,7 @@
 		608AFB7328BBD626008980D8 /* NetworkingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608AFB7228BBD626008980D8 /* NetworkingProvider.swift */; };
 		608AFB7628BBD6D8008980D8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608AFB7528BBD6D8008980D8 /* User.swift */; };
 		608AFB7928BBDCEC008980D8 /* DateDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608AFB7828BBDCEC008980D8 /* DateDecoder.swift */; };
+		608AFB7B28BCB227008980D8 /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608AFB7A28BCB227008980D8 /* NewUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		608AFB7228BBD626008980D8 /* NetworkingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProvider.swift; sourceTree = "<group>"; };
 		608AFB7528BBD6D8008980D8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		608AFB7828BBDCEC008980D8 /* DateDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDecoder.swift; sourceTree = "<group>"; };
+		608AFB7A28BCB227008980D8 /* NewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				608AFB7528BBD6D8008980D8 /* User.swift */,
+				608AFB7A28BCB227008980D8 /* NewUser.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				608AFB7628BBD6D8008980D8 /* User.swift in Sources */,
 				608AFB7928BBDCEC008980D8 /* DateDecoder.swift in Sources */,
 				608AFB5D28BBD495008980D8 /* SceneDelegate.swift in Sources */,
+				608AFB7B28BCB227008980D8 /* NewUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,11 +21,21 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="b02-oC-U40">
-                                <rect key="frame" x="20" y="115" width="374" height="727"/>
+                                <rect key="frame" x="20" y="157" width="374" height="685"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bD9-uc-mKj">
+                                <rect key="frame" x="345" y="44" width="49" height="62"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="+">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="newUserAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T7j-bj-zFr"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apx-M4-xLH">
-                                <rect key="frame" x="20" y="64" width="374" height="31"/>
+                                <rect key="frame" x="20" y="106" width="374" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Get All Users"/>
                                 <connections>
@@ -38,8 +48,10 @@
                         <constraints>
                             <constraint firstItem="b02-oC-U40" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0oV-5Y-KRh"/>
                             <constraint firstItem="b02-oC-U40" firstAttribute="top" secondItem="apx-M4-xLH" secondAttribute="bottom" constant="20" id="CyH-B0-OBm"/>
-                            <constraint firstItem="apx-M4-xLH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="SUz-fQ-eWc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bD9-uc-mKj" secondAttribute="trailing" constant="20" id="QdY-G6-ztP"/>
+                            <constraint firstItem="apx-M4-xLH" firstAttribute="top" secondItem="bD9-uc-mKj" secondAttribute="bottom" id="cjp-c5-j0w"/>
                             <constraint firstItem="apx-M4-xLH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eYs-nJ-Wfb"/>
+                            <constraint firstItem="bD9-uc-mKj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="h2y-T6-Ld1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="apx-M4-xLH" secondAttribute="trailing" constant="20" id="jOP-Kh-NZS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b02-oC-U40" secondAttribute="trailing" constant="20" id="moh-Wa-fwU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="b02-oC-U40" secondAttribute="bottom" constant="20" id="rGO-oE-dHu"/>

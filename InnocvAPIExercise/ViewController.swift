@@ -43,6 +43,19 @@ class ViewController: UIViewController {
 //	}
 	
 	@IBAction func newUserAction(_ sender: Any) {
+		
+		let newUser = NewUser(name: "Ricardo",
+							  birthdate: "2022-08-28T10:00:00", id: 0)
+		
+		NetworkingProvider.shared.addUser(user: newUser) { (response) in
+			
+			
+			
+		} failure: { error in
+			
+			print(error!)
+		}
+		
 	}
 	
 	
