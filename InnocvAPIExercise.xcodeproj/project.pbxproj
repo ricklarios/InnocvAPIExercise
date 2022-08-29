@@ -18,6 +18,8 @@
 		608AFB7628BBD6D8008980D8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608AFB7528BBD6D8008980D8 /* User.swift */; };
 		608AFB7928BBDCEC008980D8 /* DateDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608AFB7828BBDCEC008980D8 /* DateDecoder.swift */; };
 		608AFB7B28BCB227008980D8 /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608AFB7A28BCB227008980D8 /* NewUser.swift */; };
+		608AFB7E28BCCD15008980D8 /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608AFB7C28BCCD15008980D8 /* AddUserViewController.swift */; };
+		608AFB7F28BCCD15008980D8 /* AddUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 608AFB7D28BCCD15008980D8 /* AddUserViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		608AFB7528BBD6D8008980D8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		608AFB7828BBDCEC008980D8 /* DateDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDecoder.swift; sourceTree = "<group>"; };
 		608AFB7A28BCB227008980D8 /* NewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUser.swift; sourceTree = "<group>"; };
+		608AFB7C28BCCD15008980D8 /* AddUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
+		608AFB7D28BCCD15008980D8 /* AddUserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddUserViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 				608AFB6328BBD4AB008980D8 /* Assets.xcassets */,
 				608AFB6528BBD4AB008980D8 /* LaunchScreen.storyboard */,
 				608AFB6828BBD4AB008980D8 /* Info.plist */,
+				608AFB7C28BCCD15008980D8 /* AddUserViewController.swift */,
+				608AFB7D28BCCD15008980D8 /* AddUserViewController.xib */,
 			);
 			path = InnocvAPIExercise;
 			sourceTree = "<group>";
@@ -170,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				608AFB6728BBD4AB008980D8 /* LaunchScreen.storyboard in Resources */,
+				608AFB7F28BCCD15008980D8 /* AddUserViewController.xib in Resources */,
 				608AFB6428BBD4AB008980D8 /* Assets.xcassets in Resources */,
 				608AFB6228BBD495008980D8 /* Main.storyboard in Resources */,
 			);
@@ -187,6 +194,7 @@
 				608AFB7328BBD626008980D8 /* NetworkingProvider.swift in Sources */,
 				608AFB7628BBD6D8008980D8 /* User.swift in Sources */,
 				608AFB7928BBDCEC008980D8 /* DateDecoder.swift in Sources */,
+				608AFB7E28BCCD15008980D8 /* AddUserViewController.swift in Sources */,
 				608AFB5D28BBD495008980D8 /* SceneDelegate.swift in Sources */,
 				608AFB7B28BCB227008980D8 /* NewUser.swift in Sources */,
 			);
