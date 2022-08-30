@@ -62,20 +62,20 @@ final class NetworkingProvider {
 		}
 	}
 	
-	func updateUser(user: NewUser, success: @escaping (_ user: User) -> (), failure: @escaping (_ error: Error?) -> ()) {
+	func updateUser(user: NewUser, success: @escaping (_ response: String) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		
 		let url = "\(kBaseURL)User"
 		
 		
 		
-		AF.request(url, method: .put, parameters: user, encoder: JSONParameterEncoder.default).validate(statusCode: kStatusCode).responseDecodable(of: User.self, decoder: DateDecoder()) {
+		AF.request(url, method: .put, parameters: user, encoder: JSONParameterEncoder.default).validate(statusCode: kStatusCode).response {
 			response in
 			
-			if let user = response.value {
-				success(user)
-			} else {
-				failure(response.error)
-			}
+			if let error = response.error {
+							failure(error)
+						} else {
+							success("ok")
+						}
 		}
 	}
 	

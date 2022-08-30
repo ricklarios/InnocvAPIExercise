@@ -56,16 +56,16 @@ class EditUserViewController: UIViewController {
 		
 		activityIndicator.startAnimating()
 		
-		let rawDate = dateField.date
-		print(rawDate)
+		let newDate = dateField.date
+		print(newDate)
 		let dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-		let inputDate = dateFormatter.string(from: rawDate)
+		let inputDate = dateFormatter.string(from: newDate)
 		
 		if let inputName = nameField.text {
 			let newUser = NewUser(name: inputName,
 								  birthdate: inputDate, id: userId)
-			
+			print(newUser)
 			NetworkingProvider.shared.updateUser(user: newUser) { response in
 				
 				self.activityIndicator.stopAnimating()
