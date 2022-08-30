@@ -53,7 +53,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apx-M4-xLH">
                                 <rect key="frame" x="20" y="150" width="374" height="31"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Get All Users"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Show/Refresh Users List"/>
                                 <connections>
                                     <action selector="getAllUsersAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5hE-Le-iVf"/>
                                 </connections>
