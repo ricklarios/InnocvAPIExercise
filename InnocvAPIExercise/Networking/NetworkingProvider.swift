@@ -62,6 +62,23 @@ final class NetworkingProvider {
 		}
 	}
 	
+	func updateUser(id: Int, user: NewUser, success: @escaping (_ user: User) -> (), failure: @escaping (_ error: Error?) -> ()) {
+		
+		let url = "\(kBaseURL)User/\(id)"
+		
+		
+		
+		AF.request(url, method: .put, parameters: user, encoder: JSONParameterEncoder.default).validate(statusCode: kStatusCode).responseDecodable(of: User.self, decoder: DateDecoder()) {
+			response in
+			
+			if let user = response.value {
+				success(user)
+			} else {
+				failure(response.error)
+			}
+		}
+	}
+	
 	func deleteUser(id: Int, success: @escaping (_ response: String) -> (), failure: @escaping (_ error: Error?) -> ()) {
 			
 			let url = "\(kBaseURL)User/\(id)"

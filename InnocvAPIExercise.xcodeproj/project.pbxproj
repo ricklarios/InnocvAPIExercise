@@ -20,6 +20,8 @@
 		608AFB7B28BCB227008980D8 /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608AFB7A28BCB227008980D8 /* NewUser.swift */; };
 		608AFB7E28BCCD15008980D8 /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608AFB7C28BCCD15008980D8 /* AddUserViewController.swift */; };
 		608AFB7F28BCCD15008980D8 /* AddUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 608AFB7D28BCCD15008980D8 /* AddUserViewController.xib */; };
+		60F8E56828BE1A0C00C3EBAA /* EditUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F8E56628BE1A0C00C3EBAA /* EditUserViewController.swift */; };
+		60F8E56928BE1A0C00C3EBAA /* EditUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60F8E56728BE1A0C00C3EBAA /* EditUserViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		608AFB7A28BCB227008980D8 /* NewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUser.swift; sourceTree = "<group>"; };
 		608AFB7C28BCCD15008980D8 /* AddUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
 		608AFB7D28BCCD15008980D8 /* AddUserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddUserViewController.xib; sourceTree = "<group>"; };
+		60F8E56628BE1A0C00C3EBAA /* EditUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserViewController.swift; sourceTree = "<group>"; };
+		60F8E56728BE1A0C00C3EBAA /* EditUserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditUserViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,16 +74,13 @@
 		608AFB5928BBD495008980D8 /* InnocvAPIExercise */ = {
 			isa = PBXGroup;
 			children = (
+				60F8E55928BDF4AB00C3EBAA /* Views */,
 				608AFB7128BBD5E8008980D8 /* Networking */,
 				608AFB5A28BBD495008980D8 /* AppDelegate.swift */,
 				608AFB5C28BBD495008980D8 /* SceneDelegate.swift */,
-				608AFB5E28BBD495008980D8 /* ViewController.swift */,
-				608AFB6028BBD495008980D8 /* Main.storyboard */,
 				608AFB6328BBD4AB008980D8 /* Assets.xcassets */,
 				608AFB6528BBD4AB008980D8 /* LaunchScreen.storyboard */,
 				608AFB6828BBD4AB008980D8 /* Info.plist */,
-				608AFB7C28BCCD15008980D8 /* AddUserViewController.swift */,
-				608AFB7D28BCCD15008980D8 /* AddUserViewController.xib */,
 			);
 			path = InnocvAPIExercise;
 			sourceTree = "<group>";
@@ -109,6 +110,43 @@
 				608AFB7828BBDCEC008980D8 /* DateDecoder.swift */,
 			);
 			path = Decoder;
+			sourceTree = "<group>";
+		};
+		60F8E55928BDF4AB00C3EBAA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				60F8E55D28BDF50F00C3EBAA /* Edit User */,
+				60F8E55C28BDF4E100C3EBAA /* AddUser  */,
+				60F8E55B28BDF4C600C3EBAA /* Main */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		60F8E55B28BDF4C600C3EBAA /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				608AFB5E28BBD495008980D8 /* ViewController.swift */,
+				608AFB6028BBD495008980D8 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		60F8E55C28BDF4E100C3EBAA /* AddUser  */ = {
+			isa = PBXGroup;
+			children = (
+				608AFB7C28BCCD15008980D8 /* AddUserViewController.swift */,
+				608AFB7D28BCCD15008980D8 /* AddUserViewController.xib */,
+			);
+			path = "AddUser ";
+			sourceTree = "<group>";
+		};
+		60F8E55D28BDF50F00C3EBAA /* Edit User */ = {
+			isa = PBXGroup;
+			children = (
+				60F8E56628BE1A0C00C3EBAA /* EditUserViewController.swift */,
+				60F8E56728BE1A0C00C3EBAA /* EditUserViewController.xib */,
+			);
+			path = "Edit User";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +217,7 @@
 				608AFB7F28BCCD15008980D8 /* AddUserViewController.xib in Resources */,
 				608AFB6428BBD4AB008980D8 /* Assets.xcassets in Resources */,
 				608AFB6228BBD495008980D8 /* Main.storyboard in Resources */,
+				60F8E56928BE1A0C00C3EBAA /* EditUserViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +234,7 @@
 				608AFB7628BBD6D8008980D8 /* User.swift in Sources */,
 				608AFB7928BBDCEC008980D8 /* DateDecoder.swift in Sources */,
 				608AFB7E28BCCD15008980D8 /* AddUserViewController.swift in Sources */,
+				60F8E56828BE1A0C00C3EBAA /* EditUserViewController.swift in Sources */,
 				608AFB5D28BBD495008980D8 /* SceneDelegate.swift in Sources */,
 				608AFB7B28BCB227008980D8 /* NewUser.swift in Sources */,
 			);

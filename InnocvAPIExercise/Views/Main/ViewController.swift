@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 	// MARK: - Dependencies
 	
 	private var domainViewModel: [User] = []
-
+	
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 	
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
 	
 	@IBAction func newUserAction(_ sender: Any) {
 		
-		self.present(AddUserViewController(), animated: true)
+		self.present(AddUserViewController(), animated: true, completion: nil)
 		self.modalPresentationStyle = .fullScreen
 				
 	}
@@ -66,6 +66,17 @@ class ViewController: UIViewController {
 		
 		
 	}
+	
+//	override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
+//		super.present(viewControllerToPresent, animated: true)
+//
+//		if let destino = viewControllerToPresent as? EditUserViewController {
+//			print("destino OK")
+//			destino.titulo = "HOLAAA!!"
+//		}
+//
+//
+//	}
 	
 }
 
@@ -96,6 +107,15 @@ extension ViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		if let selectedId = domainViewModel[indexPath.row].id {
 			print(selectedId)
+			
+			let storyboard = UIStoryboard(name: "Main", bundle: nil)
+			guard let secondVC = storyboard.instantiateViewController(withIdentifier: "EditUserViewController") as? EditUserViewController else  {  return }
+			
+			secondVC.titulo = "HOLAAAA!!!"
+			
+			self.present(secondVC, animated: true, completion: nil)
+			self.modalPresentationStyle = .custom
+		
 		}
 		
 	}
