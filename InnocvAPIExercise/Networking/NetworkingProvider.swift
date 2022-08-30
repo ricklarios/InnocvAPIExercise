@@ -62,7 +62,7 @@ final class NetworkingProvider {
 		}
 	}
 	
-	func deleteUser(id: Int, success: @escaping () -> (), failure: @escaping (_ error: Error?) -> ()) {
+	func deleteUser(id: Int, success: @escaping (_ response: String) -> (), failure: @escaping (_ error: Error?) -> ()) {
 			
 			let url = "\(kBaseURL)User/\(id)"
 			
@@ -72,7 +72,7 @@ final class NetworkingProvider {
 				if let error = response.error {
 					failure(error)
 				} else {
-					success()
+					success("ok")
 				}
 			}
 			

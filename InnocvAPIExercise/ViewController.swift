@@ -66,22 +66,21 @@ class ViewController: UIViewController {
 		
 		activityIndicator.startAnimating()
 		
-		
 		NetworkingProvider.shared.getUsers() { (users) in
-			
-			self.activityIndicator.stopAnimating()
-			self.domainViewModel = users
-			self.tableView.reloadData()
-			self.tableView.isHidden = false
-			
-			print(self.domainViewModel)
-			
-		} failure: { (error) in
-			
-			self.activityIndicator.stopAnimating()
-			print(error.debugDescription)
-			
-		}
+				
+				self.activityIndicator.stopAnimating()
+				self.domainViewModel = users
+				self.tableView.reloadData()
+				self.tableView.isHidden = false
+				
+				print(self.domainViewModel)
+				
+			} failure: { (error) in
+				
+				self.activityIndicator.stopAnimating()
+				print(error.debugDescription)
+				
+			}
 		
 	}
 	
@@ -127,6 +126,38 @@ extension ViewController: UITableViewDelegate {
 				handler: { _, _, _  in
 					print("Delete item at index \(indexPath.row)")
 					
+					if let selectedId = self.domainViewModel[indexPath.row].id {
+						print(selectedId)
+						
+						NetworkingProvider.shared.deleteUser(id: selectedId) { response in
+							
+							print("Usuario con id: \(selectedId) eliminado correctamente")
+							
+							NetworkingProvider.shared.getUsers() { (users) in
+									
+									self.activityIndicator.stopAnimating()
+									self.domainViewModel = users
+									self.tableView.reloadData()
+									self.tableView.isHidden = false
+									
+									print(self.domainViewModel)
+									
+								} failure: { (error) in
+									
+									self.activityIndicator.stopAnimating()
+									print(error.debugDescription)
+									
+								}
+							
+						
+							} failure: { error in
+							self.activityIndicator.stopAnimating()
+							print(error.debugDescription)
+						
+							}
+							
+							
+						}
 				}
 			)
 			
