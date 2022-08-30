@@ -24,13 +24,6 @@ class AddUserViewController: UIViewController {
 		activityIndicator.hidesWhenStopped = true
 		activityIndicator.stopAnimating()
     }
-
-
-    
-	@IBAction func textFieldAction(_ sender: Any) {
-		
-		
-	}
 	
 	@IBAction func submitAction(_ sender: Any) {
 		
