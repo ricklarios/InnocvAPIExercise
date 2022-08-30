@@ -8,9 +8,7 @@
 import Foundation
 
 struct NewUser: Encodable {
-	
 	let name: String?
 	let birthdate: String?
 	let id: Int?
-	
 }

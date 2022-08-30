@@ -119,9 +119,8 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="zo7-kq-cz0">
-                                <rect key="frame" x="197" y="438" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="zo7-kq-cz0">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="D6W-SW-48N"/>
@@ -132,6 +131,8 @@
                             <constraint firstItem="D6W-SW-48N" firstAttribute="trailing" secondItem="d31-wb-1vk" secondAttribute="trailing" constant="20" id="Xxt-0c-xHO"/>
                             <constraint firstItem="d31-wb-1vk" firstAttribute="top" secondItem="uAr-tJ-prR" secondAttribute="bottom" constant="20" id="Y37-4o-MAz"/>
                             <constraint firstItem="uAr-tJ-prR" firstAttribute="leading" secondItem="D6W-SW-48N" secondAttribute="leading" constant="20" id="YVR-KF-Uza"/>
+                            <constraint firstItem="zo7-kq-cz0" firstAttribute="centerY" secondItem="sZh-a7-L67" secondAttribute="centerY" id="tRj-y5-K15"/>
+                            <constraint firstItem="zo7-kq-cz0" firstAttribute="centerX" secondItem="sZh-a7-L67" secondAttribute="centerX" id="veL-Mp-BJ9"/>
                             <constraint firstItem="d31-wb-1vk" firstAttribute="leading" secondItem="D6W-SW-48N" secondAttribute="leading" constant="20" id="zrs-uq-Rmb"/>
                         </constraints>
                     </view>

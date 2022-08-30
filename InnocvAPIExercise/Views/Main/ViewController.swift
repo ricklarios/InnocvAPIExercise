@@ -26,7 +26,6 @@ class ViewController: UIViewController {
 			} failure: { (error) in
 				self.activityIndicator.stopAnimating()
 				print(error.debugDescription)
-				
 			}
 	}
 	
@@ -39,29 +38,25 @@ class ViewController: UIViewController {
 		tableView.dataSource = self
 		tableView.delegate = self
 		tableView.isHidden = true
-		
 	}
 	
 	// MARK: - Actions
 	@IBAction func newUserAction(_ sender: Any) {
 		self.present(AddUserViewController(), animated: true, completion: nil)
 		self.modalPresentationStyle = .fullScreen
-				
 	}
 		
 	@IBAction func getAllUsersAction(_ sender: Any) {
-		activityIndicator.startAnimating()
+		self.activityIndicator.startAnimating()
 		refreshAllUsers()
 		self.tableView.isHidden = false
 	}
 }
 
 extension ViewController: UITableViewDataSource {
-	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return domainViewModel.count
 	}
-	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		var cell = tableView.dequeueReusableCell(withIdentifier: "myCell")
 		if cell == nil {
@@ -74,7 +69,6 @@ extension ViewController: UITableViewDataSource {
 }
 
 extension ViewController: UITableViewDelegate {
-	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		if let selectedId = domainViewModel[indexPath.row].id {
 			let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -84,9 +78,8 @@ extension ViewController: UITableViewDelegate {
 			self.modalPresentationStyle = .custom
 			}
 		}
-				
-		
 	func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+			self.activityIndicator.startAnimating()
 			let delete = UIContextualAction(
 				style: .destructive,
 				title: "Borrar",
