@@ -16,6 +16,23 @@ class ViewController: UIViewController {
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 	
+	private func refreshAllUsers() {
+		NetworkingProvider.shared.getUsers() { (users) in
+				
+				self.activityIndicator.stopAnimating()
+				self.domainViewModel = users
+				self.tableView.reloadData()
+								
+				print(self.domainViewModel)
+				
+			} failure: { (error) in
+				
+				self.activityIndicator.stopAnimating()
+				print(error.debugDescription)
+				
+			}
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -28,37 +45,15 @@ class ViewController: UIViewController {
 		tableView.delegate = self
 		tableView.isHidden = true
 		
-
-		
 	}
-
-//	@IBAction func getUserbyIdAction(_ sender: Any) {
-//
-//		activityIndicator.startAnimating()
-//
-//		NetworkingProvider.shared.getUserById(id: 6498) { (user) in
-//
-//			self.activityIndicator.stopAnimating()
-//
-//		} failure: { error in
-//
-//			self.activityIndicator.stopAnimating()
-//		}
-//
-//	}
+	
 	
 	
 	@IBAction func newUserAction(_ sender: Any) {
 		
-		
-		func startNavigation() {
-			self.present(AddUserViewController(), animated: true)
-			self.modalPresentationStyle = .none
-			}
-
-		startNavigation()
-		
-		
+		self.present(AddUserViewController(), animated: true)
+		self.modalPresentationStyle = .fullScreen
+				
 	}
 	
 	
@@ -66,21 +61,9 @@ class ViewController: UIViewController {
 		
 		activityIndicator.startAnimating()
 		
-		NetworkingProvider.shared.getUsers() { (users) in
-				
-				self.activityIndicator.stopAnimating()
-				self.domainViewModel = users
-				self.tableView.reloadData()
-				self.tableView.isHidden = false
-				
-				print(self.domainViewModel)
-				
-			} failure: { (error) in
-				
-				self.activityIndicator.stopAnimating()
-				print(error.debugDescription)
-				
-			}
+		refreshAllUsers()
+		self.tableView.isHidden = false
+		
 		
 	}
 	
@@ -133,22 +116,8 @@ extension ViewController: UITableViewDelegate {
 							
 							print("Usuario con id: \(selectedId) eliminado correctamente")
 							
-							NetworkingProvider.shared.getUsers() { (users) in
-									
-									self.activityIndicator.stopAnimating()
-									self.domainViewModel = users
-									self.tableView.reloadData()
-									self.tableView.isHidden = false
-									
-									print(self.domainViewModel)
-									
-								} failure: { (error) in
-									
-									self.activityIndicator.stopAnimating()
-									print(error.debugDescription)
-									
-								}
-							
+							self.refreshAllUsers()
+							self.tableView.isHidden = false
 						
 							} failure: { error in
 							self.activityIndicator.stopAnimating()

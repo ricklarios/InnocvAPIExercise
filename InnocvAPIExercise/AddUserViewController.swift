@@ -9,8 +9,6 @@ import UIKit
 
 class AddUserViewController: UIViewController {
 	
-	private var nameField: String? = ""
-	
 	@IBOutlet weak var nameTextField: UITextField!
 	@IBOutlet weak var dateSelector: UIDatePicker!
 	@IBOutlet weak var submitButton: UIButton!	
@@ -34,7 +32,7 @@ class AddUserViewController: UIViewController {
 		let dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
 		let inputDate = dateFormatter.string(from: rawDate)
-		// "yyyy-MM-ddTHH:mm:ss"
+		
 		if let inputName = nameTextField.text {
 			let newUser = NewUser(name: inputName,
 								  birthdate: inputDate, id: 0)
@@ -43,11 +41,13 @@ class AddUserViewController: UIViewController {
 				
 				self.activityIndicator.stopAnimating()
 				print("OK!!!!")
-				let alertController = UIAlertController(title: "ok", message: "User created successfully", preferredStyle: .alert)
+				let alertController = UIAlertController(title: "Success", message: "User created successfully", preferredStyle: .alert)
 				alertController.addAction(UIAlertAction(title: "OK", style: .default) { _ in
 					self.dismiss(animated: true)
 				})
-				alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+				alertController.addAction(UIAlertAction(title: "Add another user", style: .cancel) { _ in
+					self.nameTextField.text = ""
+				})
 				
 				self.present(alertController, animated: true, completion: nil)
 				
