@@ -25,7 +25,10 @@ class ViewController: UIViewController {
 		activityIndicator.stopAnimating()
 		
 		tableView.dataSource = self
+		tableView.delegate = self
 		tableView.isHidden = true
+		
+
 		
 	}
 
@@ -106,3 +109,35 @@ extension ViewController: UITableViewDataSource {
 	}
 }
 
+extension ViewController: UITableViewDelegate {
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		if let selectedId = domainViewModel[indexPath.row].id {
+			print(selectedId)
+		}
+		
+	}
+	
+	func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+			
+			
+			let delete = UIContextualAction(
+				style: .destructive,
+				title: "Borrar",
+				handler: { _, _, _  in
+					print("Delete item at index \(indexPath.row)")
+					
+				}
+			)
+			
+			
+			delete.image = UIImage(named: "trash")
+			delete.backgroundColor = UIColor(named: "custom-red")
+			
+			
+			let configuration = UISwipeActionsConfiguration(actions: [delete])
+			
+			
+			return configuration
+		}
+}
