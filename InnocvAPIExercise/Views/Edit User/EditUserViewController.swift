@@ -70,13 +70,11 @@ class EditUserViewController: UIViewController {
 				
 				self.activityIndicator.stopAnimating()
 				print("OK!!!!")
-				let alertController = UIAlertController(title: "Success", message: "User created successfully", preferredStyle: .alert)
+				let alertController = UIAlertController(title: "Success", message: "User edited successfully", preferredStyle: .alert)
 				alertController.addAction(UIAlertAction(title: "OK", style: .default) { _ in
 					self.dismiss(animated: true)
 				})
-				alertController.addAction(UIAlertAction(title: "Add another user", style: .cancel) { _ in
-					self.nameField.text = ""
-				})
+				
 				
 				self.present(alertController, animated: true, completion: nil)
 				
