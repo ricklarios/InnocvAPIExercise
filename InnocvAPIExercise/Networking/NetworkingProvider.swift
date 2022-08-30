@@ -62,9 +62,9 @@ final class NetworkingProvider {
 		}
 	}
 	
-	func updateUser(id: Int, user: NewUser, success: @escaping (_ user: User) -> (), failure: @escaping (_ error: Error?) -> ()) {
+	func updateUser(user: NewUser, success: @escaping (_ user: User) -> (), failure: @escaping (_ error: Error?) -> ()) {
 		
-		let url = "\(kBaseURL)User/\(id)"
+		let url = "\(kBaseURL)User"
 		
 		
 		

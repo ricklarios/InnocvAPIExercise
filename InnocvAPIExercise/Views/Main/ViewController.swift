@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 	// MARK: - Dependencies
 	
 	private var domainViewModel: [User] = []
+	private var userViewModel: User?
 	
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -67,17 +68,6 @@ class ViewController: UIViewController {
 		
 	}
 	
-//	override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
-//		super.present(viewControllerToPresent, animated: true)
-//
-//		if let destino = viewControllerToPresent as? EditUserViewController {
-//			print("destino OK")
-//			destino.titulo = "HOLAAA!!"
-//		}
-//
-//
-//	}
-	
 }
 
 extension ViewController: UITableViewDataSource {
@@ -108,18 +98,25 @@ extension ViewController: UITableViewDelegate {
 		if let selectedId = domainViewModel[indexPath.row].id {
 			print(selectedId)
 			
+//			NetworkingProvider.shared.getUserById(id: selectedId) {
+//				user in
+//				print("GetUser -> \(user)")
+//				self.userViewModel = user
+//			} failure: { error in
+//				print(error.debugDescription)
+//			}
+			
 			let storyboard = UIStoryboard(name: "Main", bundle: nil)
 			guard let secondVC = storyboard.instantiateViewController(withIdentifier: "EditUserViewController") as? EditUserViewController else  {  return }
-			
-			secondVC.titulo = "HOLAAAA!!!"
-			
+						
+			secondVC.userId = selectedId
+
 			self.present(secondVC, animated: true, completion: nil)
 			self.modalPresentationStyle = .custom
+			}
+			}
+				
 		
-		}
-		
-	}
-	
 	func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 			
 			

@@ -92,18 +92,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAr-tJ-prR">
-                                <rect key="frame" x="95" y="101" width="228" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAr-tJ-prR">
+                                <rect key="frame" x="20" y="64" width="374" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="d31-wb-1vk">
+                                <rect key="frame" x="20" y="115.5" width="374" height="180"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iqc-af-N4y">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="DKP-e1-hlV">
+                                        <rect key="frame" x="0.0" y="65" width="374" height="50"/>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bib-UB-iJ8">
+                                        <rect key="frame" x="0.0" y="130" width="374" height="50"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Save changes"/>
+                                        <connections>
+                                            <action selector="submitAction:" destination="DPW-0K-Sp9" eventType="touchUpInside" id="G69-91-B7G"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="zo7-kq-cz0">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="D6W-SW-48N"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="D6W-SW-48N" firstAttribute="trailing" secondItem="uAr-tJ-prR" secondAttribute="trailing" constant="20" id="GZn-Ma-cqU"/>
+                            <constraint firstItem="uAr-tJ-prR" firstAttribute="top" secondItem="D6W-SW-48N" secondAttribute="top" constant="20" id="I1U-ZM-3Gd"/>
+                            <constraint firstItem="D6W-SW-48N" firstAttribute="trailing" secondItem="d31-wb-1vk" secondAttribute="trailing" constant="20" id="Xxt-0c-xHO"/>
+                            <constraint firstItem="d31-wb-1vk" firstAttribute="top" secondItem="uAr-tJ-prR" secondAttribute="bottom" constant="20" id="Y37-4o-MAz"/>
+                            <constraint firstItem="uAr-tJ-prR" firstAttribute="leading" secondItem="D6W-SW-48N" secondAttribute="leading" constant="20" id="YVR-KF-Uza"/>
+                            <constraint firstItem="d31-wb-1vk" firstAttribute="leading" secondItem="D6W-SW-48N" secondAttribute="leading" constant="20" id="zrs-uq-Rmb"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="zo7-kq-cz0" id="MF6-Qi-y6l"/>
+                        <outlet property="dateField" destination="DKP-e1-hlV" id="oUr-2e-SQA"/>
+                        <outlet property="nameField" destination="iqc-af-N4y" id="MHD-Dj-4rW"/>
+                        <outlet property="sumbitButton" destination="Bib-UB-iJ8" id="5qd-dg-PqL"/>
                         <outlet property="testLabell" destination="uAr-tJ-prR" id="9Fd-gR-nTe"/>
                     </connections>
                 </viewController>
